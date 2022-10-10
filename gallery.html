@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taiwo and Kehinde || Galleries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__content">
+          <h1 class="header__heading">
+            Happy <br />
+            Birthday to you <br />
+            Taiwo && Kehinde
+          </h1>
+          <h2 class="header__heading2">Long life and Prosperities</h2>
+        </div>
+      </div>
+    </header>
+    <div class="gallery">
+      <h1 class="gallery-h1">
+        Galleries <span class="stop-music">stop song</span>
+      </h1>
+      <div class="images">
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-1.jpg" alt="" />
+          <p>The Celebrants</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-12.jpg" alt="" />
+          <p>Kehinde</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-2.jpg" alt="" />
+          <p>Kehinde as little bride</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-17.jpg" alt="" />
+          <p>Pastor</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-3.jpg" alt="" />
+          <p>They are truly lovable</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-11.jpg" alt="" />
+          <p>Health student</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-4.jpg" alt="" />
+          <p>Cutting birthday's cake</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-5.jpg" alt="" />
+          <p>Cutting birthday's cake</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-10.jpeg" alt="" />
+          <p>Celebrants</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-6.jpeg" alt="" />
+          <p>The celebrants at Akure</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-7.jpeg" alt="" />
+          <p>With the family</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-8.jpeg" alt="" />
+          <p>With the siblings</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Music</button>
+          <img class="gallery-img" src="./images/photo-9.jpeg" alt="" />
+          <p>With the family</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>
+        2022 &copy; Designed and coded with ❤ by
+        <a target="_blank" href="https://twitter.com/Developer_Tolu"
+          >Folorunso Tolulope</a
+        >
+      </p>
+    </footer>
+    <a href="/" class="home"><== Home</a>
+    <script>
+      const songs = [
+        './sounds/01-Monk-Turner-Fascinoma-Its-Your-Birthday.mp3',
+        './sounds/19-Sascha-Ende-Simple-New-Happy-Birthday-Melody.mp3',
+        './sounds/38-Michael-Riepen-Happy-Birthday.mp3',
+        './sounds/768dcbb7b0f94653a41292d3e6b81413.mp4',
+        './sounds/Beat-von-Stein-Happy-Happy-Happy-Birthday.mp3',
+        './sounds/happy-birthday-music-box.mp3',
+        './sounds/Happy-Birthday-To-You.mp3',
+        './sounds/percy-duke__happy-birthday-music-box.mp3',
+        './sounds/theuned_happy-birthday-crowd.mp3',
+        './sounds/William-Masopust-Happy-Birthday_-From-All-of-Us-to-You.mp3',
+      ];
+      const btnsMusic = Array.from(
+        document.querySelectorAll('.img-wrapper-btn')
+      );
+
+      const audio = new Audio();
+
+      btnsMusic.forEach((btn) => btn.addEventListener('click', playMusic));
+
+      function playMusic(e) {
+        let num = Math.trunc(Math.random() * 10);
+
+        audio.src = songs[num];
+        audio.play();
+      }
+
+      document.querySelector('.stop-music').addEventListener('click', () => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    </script>
+  </body>
+</html>

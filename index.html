@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taiwo and Kehinde</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="main-area">
+          <div class="section-left">
+            <div class="countdown-wrapper">
+              <div class="countdown">
+                <span class="day">00</span>
+                <span class="period">DAYS</span>
+              </div>
+              <div class="countdown">
+                <span class="hour">00</span>
+                <span class="period">Hours</span>
+              </div>
+              <div class="countdown">
+                <span class="min">00</span>
+                <span class="period">minutes</span>
+              </div>
+              <div class="countdown">
+                <span class="sec">00</span>
+                <span class="period">Seconds</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-right">
+            <div class="main-content">
+              <!-- <a href="#" class="logo">Kinplus</a> -->
+              <div class="main-msg">
+                <h1>
+                  <span>countdown</span><br />
+                  To Your Birthday <br />
+                  Taiwo && Kehinde
+                </h1>
+                <a href="./gallery.html" class="gallery-btn"
+                  >Throwback Photos</a
+                >
+                <p>
+                  It’s not your birthday yet, but you are special enough to
+                  deserve a wish in advance! Sending our warm hugs as a birthday
+                  present!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>
+        2022 &copy; Designed and coded with ❤ by
+        <a target="_blank" href="https://twitter.com/Developer_Tolu"
+          >Folorunso Tolulope</a
+        >
+      </p>
+    </footer>
+    <div class="birth">
+      <div class="birth-content">
+        <h2>Congratulation! Happy Birthday</h2>
+        <p>
+          You are a remarkable person who’s earned my adoration and deep respect
+          with how you’ve lived your life. May your birthday celebrations be
+          just as amazing as you are to the world.
+          <span class="name">--Tolulope Folorunso</span>
+        </p>
+      </div>
+    </div>
+    <script>
+      const countDownDate = new Date('Oct 20, 2022').getTime();
+
+      // Update the count down every 1 second
+      const x = setInterval(function () {
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.querySelector('.sec').textContent =
+          seconds >= 10 ? seconds : '0' + seconds;
+        document.querySelector('.min').textContent =
+          minutes >= 10 ? minutes : '0' + minutes;
+        document.querySelector('.hour').textContent =
+          hours >= 10 ? hours : '0' + hours;
+        document.querySelector('.day').textContent = days;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.querySelector('.main').style.display = 'none';
+          document.querySelector('.birth').style.display = 'flex';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
