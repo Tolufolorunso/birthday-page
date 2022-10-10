@@ -269,7 +269,6 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #0d0;
   position: relative;
 }
 
@@ -434,7 +433,8 @@ img {
 }
 .img-wrapper:hover .gallery-img {
   /* position: relative; */
-  filter: brightness(1.3);
+  filter: brightness(1.4);
+  transform: scale(1.15);
 }
 
 .img-wrapper:hover .img-wrapper-btn {
@@ -507,6 +507,9 @@ img {
 
   .gallery {
     max-width: 100%;
+  }
+  .img-wrapper-btn {
+    display: block;
   }
 }
 

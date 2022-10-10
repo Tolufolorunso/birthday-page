@@ -49,6 +49,9 @@
                 <a href="./gallery.html" class="gallery-btn"
                   >Throwback Photos</a
                 >
+                <button style="cursor: pointer" class="gallery-btn play">
+                  Play songs
+                </button>
                 <p>
                   It’s not your birthday yet, but you are special enough to
                   deserve a wish in advance! Sending our warm hugs as a birthday
@@ -114,6 +117,46 @@
           document.querySelector('.birth').style.display = 'flex';
         }
       }, 1000);
+      const songs = [
+        './sounds/01-Monk-Turner-Fascinoma-Its-Your-Birthday.mp3',
+        './sounds/19-Sascha-Ende-Simple-New-Happy-Birthday-Melody.mp3',
+        './sounds/38-Michael-Riepen-Happy-Birthday.mp3',
+        './sounds/768dcbb7b0f94653a41292d3e6b81413.mp4',
+        './sounds/Beat-von-Stein-Happy-Happy-Happy-Birthday.mp3',
+        './sounds/happy-birthday-music-box.mp3',
+        './sounds/Happy-Birthday-To-You.mp3',
+        './sounds/percy-duke__happy-birthday-music-box.mp3',
+        './sounds/theuned_happy-birthday-crowd.mp3',
+        './sounds/William-Masopust-Happy-Birthday_-From-All-of-Us-to-You.mp3',
+      ];
+      const playBtn = document.querySelector('.play');
+      const audio = new Audio();
+      playBtn.addEventListener('click', () => {
+        if (!playBtn.classList.contains('start')) {
+          playBtn.classList.add('start');
+          playBtn.textContent = 'Stop Songs';
+          let num = Math.trunc(Math.random() * 10);
+          audio.src = songs[num];
+          audio.play();
+        } else {
+          playBtn.classList.remove('start');
+
+          playBtn.textContent = 'Play Songs';
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+
+      audio.addEventListener(
+        'ended',
+        () => {
+          playBtn.classList.remove('start');
+          playBtn.textContent = 'Play Songs';
+          audio.pause();
+          audio.currentTime = 0;
+        },
+        false
+      );
     </script>
   </body>
 </html>
