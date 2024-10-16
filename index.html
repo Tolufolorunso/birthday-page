@@ -65,7 +65,7 @@
     </main>
     <footer class="footer">
       <p>
-        2022 &copy; Designed and coded with ❤ by
+        <span id="year">1900</span> &copy; Designed and coded with ❤ by
         <a target="_blank" href="https://twitter.com/Developer_Tolu"
           >Folorunso Tolulope</a
         >
@@ -157,6 +157,9 @@
         },
         false
       )
+      const year = document.querySelector('#year')
+      const CurrentYear = new Date().getFullYear()
+      year.textContent = CurrentYear
     </script>
   </body>
 </html>

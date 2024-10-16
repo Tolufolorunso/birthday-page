@@ -61,6 +61,11 @@
         </div>
         <div class="img-wrapper">
           <button class="img-wrapper-btn">Play</button>
+          <img class="gallery-img" src="./images/photo-27.jpg" alt="" />
+          <p>At the birthday of another twins at Igbala, Ijero</p>
+        </div>
+        <div class="img-wrapper">
+          <button class="img-wrapper-btn">Play</button>
           <img class="gallery-img" src="./images/photo-14.jpg" alt="" />
           <p>Celebrant with @Developer_Tolu Portharcourt</p>
         </div>
@@ -148,7 +153,7 @@
     </div>
     <footer class="footer">
       <p>
-        2022 &copy; Designed and coded with ❤ by
+        <span id="year">1900</span> &copy; Designed and coded with ❤ by
         <a target="_blank" href="https://twitter.com/Developer_Tolu"
           >Folorunso Tolulope</a
         >
@@ -167,26 +172,30 @@
         './sounds/percy-duke__happy-birthday-music-box.mp3',
         './sounds/theuned_happy-birthday-crowd.mp3',
         './sounds/William-Masopust-Happy-Birthday_-From-All-of-Us-to-You.mp3',
-      ];
+      ]
       const btnsMusic = Array.from(
         document.querySelectorAll('.img-wrapper-btn')
-      );
+      )
 
-      const audio = new Audio();
+      const audio = new Audio()
 
-      btnsMusic.forEach((btn) => btn.addEventListener('click', playMusic));
+      btnsMusic.forEach((btn) => btn.addEventListener('click', playMusic))
 
       function playMusic(e) {
-        let num = Math.trunc(Math.random() * 10);
+        let num = Math.trunc(Math.random() * 10)
 
-        audio.src = songs[num];
-        audio.play();
+        audio.src = songs[num]
+        audio.play()
       }
 
       document.querySelector('.stop-music').addEventListener('click', () => {
-        audio.pause();
-        audio.currentTime = 0;
-      });
+        audio.pause()
+        audio.currentTime = 0
+      })
+
+      const year = document.querySelector('#year')
+      const CurrentYear = new Date().getFullYear()
+      year.textContent = CurrentYear
     </script>
   </body>
 </html>
