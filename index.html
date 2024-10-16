@@ -83,7 +83,11 @@
       </div>
     </div>
     <script>
-      const countDownDate = new Date('Oct 20, 2024').getTime()
+      const year = document.querySelector('#year')
+      const CurrentYear = new Date().getFullYear()
+      year.textContent = CurrentYear
+
+      const countDownDate = new Date(`Oct 20, ${CurrentYear}`).getTime()
 
       // Update the count down every 1 second
       const x = setInterval(function () {
@@ -157,9 +161,6 @@
         },
         false
       )
-      const year = document.querySelector('#year')
-      const CurrentYear = new Date().getFullYear()
-      year.textContent = CurrentYear
     </script>
   </body>
 </html>
