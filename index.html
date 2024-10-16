@@ -83,40 +83,40 @@
       </div>
     </div>
     <script>
-      const countDownDate = new Date('Oct 20, 2022').getTime();
+      const countDownDate = new Date('Oct 20, 2024').getTime()
 
       // Update the count down every 1 second
       const x = setInterval(function () {
         // Get today's date and time
-        const now = new Date().getTime();
+        const now = new Date().getTime()
 
         // Find the distance between now and the count down date
-        const distance = countDownDate - now;
+        const distance = countDownDate - now
 
         // Time calculations for days, hours, minutes and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24))
         const hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        )
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
         // Display the result in the element with id="demo"
         document.querySelector('.sec').textContent =
-          seconds >= 10 ? seconds : '0' + seconds;
+          seconds >= 10 ? seconds : '0' + seconds
         document.querySelector('.min').textContent =
-          minutes >= 10 ? minutes : '0' + minutes;
+          minutes >= 10 ? minutes : '0' + minutes
         document.querySelector('.hour').textContent =
-          hours >= 10 ? hours : '0' + hours;
-        document.querySelector('.day').textContent = days;
+          hours >= 10 ? hours : '0' + hours
+        document.querySelector('.day').textContent = days
 
         // If the count down is finished, write some text
         if (distance < 0) {
-          clearInterval(x);
-          document.querySelector('.main').style.display = 'none';
-          document.querySelector('.birth').style.display = 'flex';
+          clearInterval(x)
+          document.querySelector('.main').style.display = 'none'
+          document.querySelector('.birth').style.display = 'flex'
         }
-      }, 1000);
+      }, 1000)
       const songs = [
         './sounds/01-Monk-Turner-Fascinoma-Its-Your-Birthday.mp3',
         './sounds/19-Sascha-Ende-Simple-New-Happy-Birthday-Melody.mp3',
@@ -128,35 +128,35 @@
         './sounds/percy-duke__happy-birthday-music-box.mp3',
         './sounds/theuned_happy-birthday-crowd.mp3',
         './sounds/William-Masopust-Happy-Birthday_-From-All-of-Us-to-You.mp3',
-      ];
-      const playBtn = document.querySelector('.play');
-      const audio = new Audio();
+      ]
+      const playBtn = document.querySelector('.play')
+      const audio = new Audio()
       playBtn.addEventListener('click', () => {
         if (!playBtn.classList.contains('start')) {
-          playBtn.classList.add('start');
-          playBtn.textContent = 'Stop Songs';
-          let num = Math.trunc(Math.random() * 10);
-          audio.src = songs[num];
-          audio.play();
+          playBtn.classList.add('start')
+          playBtn.textContent = 'Stop Songs'
+          let num = Math.trunc(Math.random() * 10)
+          audio.src = songs[num]
+          audio.play()
         } else {
-          playBtn.classList.remove('start');
+          playBtn.classList.remove('start')
 
-          playBtn.textContent = 'Play Songs';
-          audio.pause();
-          audio.currentTime = 0;
+          playBtn.textContent = 'Play Songs'
+          audio.pause()
+          audio.currentTime = 0
         }
-      });
+      })
 
       audio.addEventListener(
         'ended',
         () => {
-          playBtn.classList.remove('start');
-          playBtn.textContent = 'Play Songs';
-          audio.pause();
-          audio.currentTime = 0;
+          playBtn.classList.remove('start')
+          playBtn.textContent = 'Play Songs'
+          audio.pause()
+          audio.currentTime = 0
         },
         false
-      );
+      )
     </script>
   </body>
 </html>
